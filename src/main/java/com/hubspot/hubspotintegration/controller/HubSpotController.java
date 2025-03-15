@@ -26,19 +26,31 @@ public class HubSpotController {
 
     @PostMapping("/auth/callback")
     public ResponseEntity<String> handleOAuthCallback(@RequestParam String code) {
-        String token = hubSpotService.exchangeAuthCodeForToken(code);
-        return ResponseEntity.ok(token);
+        try {
+            String token = hubSpotService.exchangeAuthCodeForToken(code);
+            return ResponseEntity.ok(token);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error processing OAuth callback");
+        }
     }
 
     @PostMapping("/contacts")
     public ResponseEntity<String> createContact(@RequestBody Map<String, Object> contactData) {
-        String response = hubSpotService.createContact(contactData);
-        return ResponseEntity.ok(response);
+        try {
+            String response = hubSpotService.createContact(contactData);
+            return ResponseEntity.ok(response);
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error creating contact");
+        }
     }
 
     @PostMapping("/webhook")
     public ResponseEntity<String> handleWebhook(@RequestBody Map<String, Object> eventData) {
-        hubSpotService.processWebhook(eventData);
-        return ResponseEntity.ok("Webhook processed successfully");
+        try {
+            hubSpotService.processWebhook(eventData);
+            return ResponseEntity.ok("Webhook processed successfully");
+        } catch (Exception e) {
+            return ResponseEntity.status(500).body("Error processing webhook");
+        }
     }
 }

@@ -118,7 +118,7 @@ public class HubSpotService {
 
     private String getAccessToken() {
         // Implement the logic to retrieve the access token
-        return "CJCVhMDZMhIHAAEAQAAAARja7c8XIJaFtiUo5PC9BDIU82-aTgD2bHRAUGYvghPl_S-nhiY6MAAAAEEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAOABAAAAAAAAAAAAAAAQAkIU2snQFge6MVPisTyvdvgzcfrcEoNKA25hMVIAWgBgAGiWhbYlcAA";
+        return "CLfggtzZMhIHAAEAQAAAARja7c8XIJaFtiUo5PC9BDIUtMiqwmI-XdbTn2um_NxlOfTMm6M6MAAAAEEAAAAAAAAAAAAAAAAAgAAAAAAAAAAAACAAAAAAAOABAAAAAAAAAAAAAAAQAkIUjdqqpeeJsBpUMNf7bp9FIm0B339KA25hMVIAWgBgAGiWhbYlcAA";
     }
 
     private Map<String, Object> extractContactData(Map<String, Object> eventData) {
