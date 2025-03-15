@@ -5,3 +5,4 @@ Points to improve
 - Authentication implementation
 - Change restTemplate to feignClient
 - More handler exceprion options
+- Using openAPI to build documentation
